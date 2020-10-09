@@ -36,7 +36,7 @@ public class AssetPointImport {
         List<Map<String, String>> result = new ArrayList<>();
         int rowNumber = sheet.getPhysicalNumberOfRows();
 
-        ////
+        
         List<AssetPointEntity_HI> beans = new ArrayList<>();
         //从第三行开始读数据
         for (int i = 2; i < rowNumber; i++) {
