@@ -1,0 +1,10 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: mytestdb
+      contact-points: 127.0.0.1
+      username:
+      password:
+      session-name:
+server:
+  port: 8082
