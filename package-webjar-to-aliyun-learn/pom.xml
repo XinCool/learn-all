@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>aliyunserver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>aliyunserver</name>
+    <name>package-webjar-to-aliyun-learn</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

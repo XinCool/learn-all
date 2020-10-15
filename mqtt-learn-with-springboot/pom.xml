@@ -8,10 +8,10 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.learn.eaxample</groupId>
+    <groupId>com.learn.example</groupId>
     <artifactId>mqtt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mqtt</name>
+    <name>mqtt-learn-with-springboot</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>kafka-search-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>kafka-search-test</name>
+    <name>kafka-test-nconsumer-nconfig-nlistener</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
