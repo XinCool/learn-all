@@ -18,8 +18,7 @@ public class UserEntity {
 
 
     /**
-     *数据库的结构 primary key(user_id);
-     *
+     * 数据库的结构 primary key(user_id);
      **/
 
     //分区键

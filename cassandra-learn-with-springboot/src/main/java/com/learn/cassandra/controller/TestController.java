@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * 测试cassandra数据
+ *
  * @author Cool
  * @create 2020-10-15 11:43
  */
@@ -21,7 +22,7 @@ public class TestController {
     @GetMapping("/get")
     @ResponseBody
     public List<UserEntity> findTopTen() {
-        String cql=String.format("select * from user limit 10");
+        String cql = String.format("select * from user limit 10");
         List<UserEntity> userEntityList = cassandraTemplate.select(cql, UserEntity.class);
         return userEntityList;
     }
