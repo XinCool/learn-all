@@ -54,6 +54,5 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
         cqlSessionFactoryBean.setUsername(username);
         return cqlSessionFactoryBean;
     }
-
 }
 
