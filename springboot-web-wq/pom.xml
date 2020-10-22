@@ -18,7 +18,7 @@
     <properties>
         <java.version>1.8</java.version>
 
-        <repositories>
+ <!--       <repositories>
             <repository>
                 <id>alimaven</id>
                 <url>https://maven.aliyun.com/repository/public</url>
@@ -29,7 +29,7 @@
                 <id>alimaven</id>
                 <url>https://maven.aliyun.com/repository/public</url>
             </pluginRepository>
-        </pluginRepositories>
+        </pluginRepositories>-->
     </properties>
 
     <dependencies>
