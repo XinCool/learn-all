@@ -11,4 +11,9 @@ public class HelloController {
     public String hello (){
         return "this is my first springboot of web";
     }
+    @ResponseBody
+    @RequestMapping("/test")
+    public String test(){
+        return "this is test springboot";
+    }
 }
