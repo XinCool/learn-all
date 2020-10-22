@@ -55,7 +55,8 @@ public class ActorDemo extends AbstractActor {
         //demo.tell(PoisonPill.getInstance(),ActorRef.noSender());
         //第三种
         //demo.tell(Kill.getInstance(),ActorRef.noSender());
-
+        //
+        //
 
 
 
