@@ -5,79 +5,43 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.3.RELEASE</version>
+        <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.learn</groupId>
-    <artifactId>learn-all-v1.0</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>alibaba-sentinel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>learn-all-v1.0</name>
+    <name>alibaba-sentinel-learn</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
-        <scala.version>2.11</scala.version>
-        <akka.version>2.4.2</akka.version>
     </properties>
 
     <dependencies>
-        <!--<dependency>
-            <groupId>com.sie.irradiator</groupId>
-            <artifactId>1011-sieiot-common-model</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-        &lt;!&ndash;全局异常&ndash;&gt;
+        <!--sentinel-->
         <dependency>
-            <groupId>com.sie.irradiator</groupId>
-            <artifactId>5003-sieiot-exception-component</artifactId>
-            <version>2.0.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
-
-
-        <!--与springboot整合的kafka-->
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-            <version>2.2.4.RELEASE</version>
-        </dependency>
-        <!--kafka-->
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka_2.10</artifactId>
-            <version>0.10.0.1</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>0.9.0.RELEASE</version>
         </dependency>
 
-
-        <!--redis-->
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>3.0.0</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--devtools-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--springboot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
