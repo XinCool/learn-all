@@ -7,10 +7,10 @@
         <artifactId>learn-all-v1.0</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>com.learn</groupId>
-    <artifactId>kafka-demo</artifactId>
+    <groupId>com.akka</groupId>
+    <artifactId>client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>kafka-demo</name>
+    <name>akka-client</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -18,13 +18,21 @@
     </properties>
 
     <dependencies>
+        <!-- akka -->
         <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_${scala.version}</artifactId>
+            <version>${akka.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-slf4j_${scala.version}</artifactId>
+            <version>${akka.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-cluster_${scala.version}</artifactId>
+            <version>${akka.version}</version>
         </dependency>
 
         <dependency>
@@ -53,6 +61,12 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tinkerpop</groupId>
+            <artifactId>gremlin-shaded</artifactId>
+            <version>3.4.5</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

@@ -12,9 +12,9 @@ public class DIProducer implements IndirectActorProducer {
     private ApplicationContext context;
     private String beanName;
 
-    public DIProducer(ApplicationContext context,String beanName){
-        this.context=context;
-        this.beanName=beanName;
+    public DIProducer(ApplicationContext context, String beanName) {
+        this.context = context;
+        this.beanName = beanName;
     }
 
     @Override
