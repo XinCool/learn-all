@@ -1,5 +1,16 @@
 package com.akka.client;
 
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import akka.actor.Props;
+import com.akka.client.actor.TransformationBackend;
+import com.akka.client.actor.TransformationFrontend;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+
 /**
  * @author Cool
  * @create 2020-11-02 15:20
@@ -7,9 +18,8 @@ package com.akka.client;
 @Service
 public class ActorListenerInit {
     private static final String ACTOR_SYSTEM_NAME = "akka-cluster";
+    private static final Config config = ConfigFactory.parseResources("actor-system.conf").withFallback(ConfigFactory.load());
 
-    @Resource
-    private ActorSystemContext actorContext;
 
     private ActorSystem system;
 
@@ -21,21 +31,12 @@ public class ActorListenerInit {
 
     @PostConstruct
     public void initActorSystem() {
-        actorContext.setActorService(this);
-        system = ActorSystem.create(ACTOR_SYSTEM_NAME,actorContext.getConfig());
-        actorContext.setActorSystem(system);
-
-        //启动集群监听
-        clusterListener = system.actorOf(Props.create(new ClusterListener.ActorCreator(actorContext)), "clusterListener");
-        actorContext.setClusterListener(clusterListener);
-
-
-
+        system = ActorSystem.create(ACTOR_SYSTEM_NAME,config);
 
         /**
          * 以下为测试使用代码
          */
-        remoteReceiveActor = system.actorOf(Props.create(RemoteReceiveActor.class), "remoteReceiveActor");
-        clusterReceiveActor = system.actorOf(Props.create(ClusterReceiveActor.class), "clusterReceiveActor");
+        remoteReceiveActor = system.actorOf(Props.create(TransformationBackend.class), "transformationBackend");
+        clusterReceiveActor = system.actorOf(Props.create(TransformationFrontend.class), "transformationFrontend");
     }
 }
