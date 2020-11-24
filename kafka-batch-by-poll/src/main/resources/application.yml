@@ -1,0 +1,14 @@
+server:
+  port:8001
+
+kafka:
+enabled: true
+bootstrap.servers: "${KAFKA_SERVERS:localhost:9092}"
+acks: "${KAFKA_ACKS:all}"
+retries: "${KAFKA_RETRIES:1}"
+batch.size: "${KAFKA_BATCH_SIZE:16384}"
+linger.ms: "${KAFKA_LINGER_MS:1}"
+buffer.memory: "${BUFFER_MEMORY:33554432}"
+poll_interval: "${POLL_INTERVAL_MS:25}"
+auto_commit_interval: "${AUTO_COMMIT_INTERVAL_MS:100}"
+poll_records_pack_size: "${MAX_POLL_RECORDS:1000}"
