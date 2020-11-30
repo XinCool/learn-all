@@ -11,17 +11,7 @@ public class DeviceBean extends ReqeustCommonDataBean {
     private String searchText;
     private String tenantId;
     private String keyword;
-    //查询直属下级 设备列表
     private Integer deviceTypeId;
-    private Integer deviceSupplierTypeId;
-
-    public Integer getDeviceSupplierTypeId() {
-        return deviceSupplierTypeId;
-    }
-
-    public void setDeviceSupplierTypeId(Integer deviceSupplierTypeId) {
-        this.deviceSupplierTypeId = deviceSupplierTypeId;
-    }
 
     public String getId() {
         return id;
@@ -86,7 +76,6 @@ public class DeviceBean extends ReqeustCommonDataBean {
     public void setKeyword(String keyword) {
         this.keyword = keyword;
     }
-
 
     public Integer getDeviceTypeId() {
         return deviceTypeId;

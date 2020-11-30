@@ -1,10 +1,11 @@
 package com.example.ddd.interfaces.controller;
 
 import cn.hutool.core.util.StrUtil;
-import com.example.ddd.application.inter.IDeviceService;
-import com.example.ddd.domain.device.aggregates.DeviceRoot;
+import com.example.ddd.application.inter.IDeviceAppService;
+import com.example.ddd.domain.device.aggregates.Device;
 import com.example.ddd.domain.device.entities.DeviceInfo;
 import com.example.ddd.dto.DeviceBean;
+import com.example.ddd.interfaces.assembler.DeviceAssembler;
 import com.sie.iot.common.bean.PaginationRequestData;
 import com.sie.iot.common.bean.ResponseData;
 import com.sie.iot.common.iotenum.ResponseMsgCode;
@@ -28,7 +29,7 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "设备", tags = {"设备"})
 public class DeviceController extends CommonAbstractService {
     @Autowired
-    private IDeviceService deviceServiceImpl;
+    private IDeviceAppService deviceAppService;
 
     @Override
     public IBaseCommon<?> getBaseCommonServer() {
@@ -42,7 +43,7 @@ public class DeviceController extends CommonAbstractService {
             throw new ApplicationValidationException(ResponseMsgCode.NOT_NULL_PARAM.msgCode);
         }
         try {
-            DeviceRoot deviceRoot = deviceServiceImpl.getByDeviceId(deviceId);
+            Device deviceRoot = deviceAppService.getByDeviceId(deviceId);
             return new ResponseData(ResponseMsgCode.SUCCESS.msgCode, deviceRoot, redisTemplate);
         } catch (Exception e) {
             throw new ApplicationRuntimeException(ResponseMsgCode.ERROR.msgCode, e);
@@ -53,8 +54,20 @@ public class DeviceController extends CommonAbstractService {
     @PostMapping(value = "/find-device")
     public ResponseData findDevice(@RequestBody PaginationRequestData<DeviceBean> paginationRequestData) throws ApplicationException {
         try {
-            Pagination<DeviceInfo> device = deviceServiceImpl.findDevice(paginationRequestData);
+            Pagination<DeviceInfo> device = deviceAppService.findDevice(paginationRequestData);
             return new ResponseData(ResponseMsgCode.SUCCESS.msgCode, device, redisTemplate);
+        } catch (Exception e) {
+            throw new ApplicationRuntimeException(ResponseMsgCode.ERROR.msgCode, e);
+        }
+    }
+
+
+    @ApiOperation(value = "查询设备属性及父级设备", notes = "查询设备属性及父级设备 ", httpMethod = "POST")
+    @PostMapping(value = "/find-device-parent")
+    public ResponseData findDeviceParentPagination(@RequestBody PaginationRequestData<DeviceAssembler> paginationRequestData){
+        try {
+            Pagination<Device> deviceKvParent = deviceAppService.findDeviceKvParent(paginationRequestData);
+            return new ResponseData(ResponseMsgCode.SUCCESS.msgCode,deviceKvParent, redisTemplate);
         } catch (Exception e) {
             throw new ApplicationRuntimeException(ResponseMsgCode.ERROR.msgCode, e);
         }

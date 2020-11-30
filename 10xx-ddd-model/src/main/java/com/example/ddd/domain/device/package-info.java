@@ -6,4 +6,4 @@
  * > repository   资源库接口，实现由基础设施负责
  * > external     依赖的外部服务接口
  */
-package com.example.ddd.domain;
+package com.example.ddd.domain.device;

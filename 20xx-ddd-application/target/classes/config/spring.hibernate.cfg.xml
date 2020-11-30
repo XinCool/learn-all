@@ -66,7 +66,7 @@
     </tx:advice>
     <!-- 那些类的哪些方法参与事务 -->
     <aop:config><!--|| execution(* com.sie.saaf.*.model.dao.readonly.*.*(..))-->
-        <aop:pointcut id="businessService" expression="execution(* com.example.ddd.application.service.*.*(..)) || execution(* com.sie.iot.common.model.inter.server.*.*(..))"/>
+        <aop:pointcut id="businessService" expression="execution(* com.example.ddd.infrastructure.repository.*.*(..)) || execution(* com.sie.iot.common.model.inter.server.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="businessService" order="0"/>
     </aop:config>
 

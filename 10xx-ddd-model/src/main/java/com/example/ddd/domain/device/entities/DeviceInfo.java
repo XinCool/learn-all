@@ -28,4 +28,11 @@ public class DeviceInfo {
     private Long lastUpdatedBy; //更新人
     private Long lastUpdateLogin; //最后登录ID
     private Integer versionNum; //版本号
+
+    /**
+     * 删除设备
+     */
+    private void delete(){
+        this.setDeleteFlag(1);
+    }
 }

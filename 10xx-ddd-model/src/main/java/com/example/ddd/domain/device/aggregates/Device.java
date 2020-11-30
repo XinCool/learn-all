@@ -2,6 +2,7 @@ package com.example.ddd.domain.device.aggregates;
 
 import com.example.ddd.domain.device.entities.AttributeKvInfo;
 import com.example.ddd.domain.device.entities.DeviceInfo;
+import com.example.ddd.domain.device.vo.RelationInfo;
 import lombok.Data;
 
 import java.util.List;
@@ -11,7 +12,8 @@ import java.util.List;
  * @create 2020-11-23 16:33
  */
 @Data
-public class DeviceRoot {
+public class Device {
     DeviceInfo device;
-    List<AttributeKvInfo> attributeKvInfo;
+    List<AttributeKvInfo> attributeKvs;
+    RelationInfo relation;
 }
