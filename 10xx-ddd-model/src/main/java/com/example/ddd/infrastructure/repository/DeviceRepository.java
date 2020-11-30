@@ -1,14 +1,12 @@
 package com.example.ddd.infrastructure.repository;
 
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.example.ddd.domain.device.aggregates.Device;
 import com.example.ddd.domain.device.entities.AttributeKvInfo;
 import com.example.ddd.domain.device.entities.DeviceInfo;
 import com.example.ddd.domain.device.repository.IDeviceRepository;
-import com.example.ddd.domain.device.vo.RelationInfo;
 import com.example.ddd.infrastructure.dao.readonly.AttributeOnlyKvDAO_HI_RO;
 import com.example.ddd.infrastructure.dao.readonly.DeviceWithKvAndParentIdDAO_HI_RO;
 import com.example.ddd.infrastructure.entities.AttributeKvEntity_HI;
@@ -213,9 +211,9 @@ public class DeviceRepository implements IDeviceRepository {
             DeviceInfo deviceInfo = new DeviceInfo();
             BeanUtil.copyProperties(deviceRo,deviceInfo);
 
-            //Relation device
+            /*//Relation device
             RelationInfo relationInfo = new RelationInfo();
-            BeanUtil.copyProperties(deviceInfo,relationInfo,"id","additionalInfo");
+            BeanUtil.copyProperties(deviceInfo,relationInfo,"id","additionalInfo");*/
 
             //device
             Device device = new Device();
@@ -225,12 +223,12 @@ public class DeviceRepository implements IDeviceRepository {
             if (deviceInfo!=null){
                 device.setDevice(deviceInfo);
             }
-            if (relationInfo!=null){
+            /*if (relationInfo!=null){
                 device.setRelation(relationInfo);
             }
             if (ObjectUtil.isNotEmpty(relationInfo)){
                 device.setRelation(relationInfo);
-            }
+            }*/
             deviceData.add(device);
         }
         pagination.setData(deviceData);
