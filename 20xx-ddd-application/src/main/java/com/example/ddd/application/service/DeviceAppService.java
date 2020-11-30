@@ -8,6 +8,7 @@ import com.example.ddd.domain.device.entities.DeviceInfo;
 import com.example.ddd.domain.device.repository.IDeviceRepository;
 import com.example.ddd.domain.device.service.IDeviceService;
 import com.example.ddd.dto.DeviceBean;
+import com.example.ddd.infrastructure.repository.RelationRepository;
 import com.example.ddd.interfaces.assembler.DeviceAssembler;
 import com.sie.iot.common.bean.OrderByBean;
 import com.sie.iot.common.bean.PaginationRequestData;
@@ -25,7 +26,8 @@ import org.springframework.stereotype.Component;
 public class DeviceAppService implements IDeviceAppService {
     @Autowired
     private IDeviceRepository deviceRepository;
-
+    @Autowired
+    private RelationRepository relationRepository;
     @Autowired
     private IDeviceService deviceService;
 

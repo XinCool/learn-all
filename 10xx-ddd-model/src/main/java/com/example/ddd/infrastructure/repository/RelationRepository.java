@@ -1,8 +1,8 @@
 package com.example.ddd.infrastructure.repository;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.example.ddd.domain.device.repository.IRelationRepository;
-import com.example.ddd.domain.device.vo.RelationInfo;
+import com.example.ddd.domain.relation.entities.RelationInfo;
+import com.example.ddd.domain.relation.repository.IRelationRepository;
 import com.example.ddd.infrastructure.dao.RelationDAO_HI;
 import com.example.ddd.infrastructure.entities.RelationEntity_HI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,21 +23,38 @@ public class RelationRepository implements IRelationRepository {
     private RelationDAO_HI relationDAO_HI;
 
     @Override
-    public RelationInfo findParentByToId(String toId, String fromType, String toType, String relationType, String relationTypeGroup) {
-        Map<String,Object> paramMap = new HashMap<>();
-        paramMap.put("fromType",fromType);
-        paramMap.put("toId",toId);
-        paramMap.put("relationType",relationType);
-        paramMap.put("toType",toType);
-        paramMap.put("relationTypeGroup",relationTypeGroup);
+    public RelationInfo findByToId(String toId, String fromType, String toType, String relationType, String relationTypeGroup) {
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("toId", toId);
+        paramMap.put("toType", toType);
+        paramMap.put("fromType", fromType);
+        paramMap.put("relationType", relationType);
+        paramMap.put("relationTypeGroup", relationTypeGroup);
         List<RelationEntity_HI> relationEntity_his = relationDAO_HI.findByProperty(paramMap);
-        if (relationEntity_his!=null&&relationEntity_his.size()>0)
-        {
+        if (relationEntity_his != null && relationEntity_his.size() > 0) {
             RelationEntity_HI relationEntity = relationEntity_his.get(0);
             RelationInfo relationInfo = new RelationInfo();
-            BeanUtil.copyProperties(relationEntity,relationInfo);
+            BeanUtil.copyProperties(relationEntity, relationInfo);
             return relationInfo;
         }
-        return null ;
+        return null;
+    }
+
+    @Override
+    public RelationInfo findByFromId(String fromId, String fromType, String toType, String relationType, String relationTypeGroup) {
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("fromId", fromId);
+        paramMap.put("fromType", fromType);
+        paramMap.put("toType", toType);
+        paramMap.put("relationType", relationType);
+        paramMap.put("relationTypeGroup", relationTypeGroup);
+        List<RelationEntity_HI> relationEntity_his = relationDAO_HI.findByProperty(paramMap);
+        if (relationEntity_his != null && relationEntity_his.size() > 0) {
+            RelationEntity_HI relationEntity = relationEntity_his.get(0);
+            RelationInfo relationInfo = new RelationInfo();
+            BeanUtil.copyProperties(relationEntity, relationInfo);
+            return relationInfo;
+        }
+        return null;
     }
 }

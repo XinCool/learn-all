@@ -7,13 +7,12 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.ddd.domain.device.aggregates.Device;
 import com.example.ddd.domain.device.entities.AttributeKvInfo;
 import com.example.ddd.domain.device.entities.DeviceInfo;
-import com.example.ddd.domain.device.vo.RelationInfo;
 import com.example.ddd.domain.device.repository.IDeviceRepository;
+import com.example.ddd.domain.device.vo.RelationInfo;
 import com.example.ddd.infrastructure.dao.readonly.AttributeOnlyKvDAO_HI_RO;
 import com.example.ddd.infrastructure.dao.readonly.DeviceWithKvAndParentIdDAO_HI_RO;
 import com.example.ddd.infrastructure.entities.AttributeKvEntity_HI;
 import com.example.ddd.infrastructure.entities.DeviceEntity_HI;
-import com.example.ddd.infrastructure.entities.RelationEntity_HI;
 import com.example.ddd.infrastructure.entities.readonly.AttributeOnlyKv_HI_RO;
 import com.example.ddd.infrastructure.entities.readonly.DeviceWithKvAndParentId_HI_RO;
 import com.example.ddd.infrastructure.utils.enums.EntityType;
@@ -43,8 +42,6 @@ public class DeviceRepository implements IDeviceRepository {
 
     @Autowired
     private ViewObject<DeviceEntity_HI> deviceDAO_HI;
-    @Autowired
-    private ViewObject<RelationEntity_HI> relationDAO_HI;
     @Autowired
     private ViewObject<AttributeKvEntity_HI> attributeKvDAO_HI;
     @Autowired
