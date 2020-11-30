@@ -38,7 +38,7 @@ public class AssetPointEntity_HI implements Serializable{
 	}
 
 	@Id
-	@GenericGenerator(name = "idGenerator", strategy = "com.example.ddd.infrastructure.utils.id.CustomUUIDGenerator")
+	@GenericGenerator(name = "redisGenerationId", strategy = "com.sie.iot.common.idgenerate.RedisGenerationId")
 	@GeneratedValue(generator = "redisGenerationId")
 	@Column(name="id", nullable=false, length=20)	
 	public Long getId() {

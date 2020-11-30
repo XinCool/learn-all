@@ -1,8 +1,8 @@
 package com.example.ddd.infrastructure.entities.readonly;
 
-import com.sie.iot.platform.asset.model.utils.enums.AttributeKeyType;
-import com.sie.iot.platform.asset.model.utils.enums.DeviceType;
-import com.sie.iot.platform.asset.model.utils.enums.EntityType;
+import com.example.ddd.infrastructure.utils.enums.AttributeKeyType;
+import com.example.ddd.infrastructure.utils.enums.DeviceType;
+import com.example.ddd.infrastructure.utils.enums.EntityType;
 
 import java.io.Serializable;
 

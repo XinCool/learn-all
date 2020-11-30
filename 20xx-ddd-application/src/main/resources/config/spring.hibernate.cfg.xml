@@ -12,7 +12,7 @@
     <context:property-placeholder location="classpath:application.properties" ignore-unresolvable="true"  />
     <aop:config proxy-target-class="true"/>
     <context:annotation-config/>
-    <context:component-scan base-package="com.sie.iot.common,com.example.ddd.infrastructure.dao,com.example.ddd.domain.device.repository,com.example.ddd.application.service"/>
+    <context:component-scan base-package="com.sie.iot.common,com.example.ddd.infrastructure.dao,com.example.ddd.infrastructure.repository,com.example.ddd.domain.*.service,com.example.ddd.application.service"/>
 
     <bean id="dataSource" destroy-method="close" class="com.sie.iot.common.dbcp.BasicDataSourceDecrypt">
         <property name="driverClassName" value="${properties.jdbc.driverClassName}"/>

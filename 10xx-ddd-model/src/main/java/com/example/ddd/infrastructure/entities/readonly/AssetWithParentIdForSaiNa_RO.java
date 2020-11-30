@@ -1,8 +1,9 @@
 package com.example.ddd.infrastructure.entities.readonly;
 
-import com.sie.iot.platform.asset.model.utils.enums.EntityType;
-import com.sie.iot.platform.asset.model.utils.enums.RelationType;
-import com.sie.iot.platform.asset.model.utils.enums.RelationTypeGroup;
+
+import com.example.ddd.infrastructure.utils.enums.EntityType;
+import com.example.ddd.infrastructure.utils.enums.RelationType;
+import com.example.ddd.infrastructure.utils.enums.RelationTypeGroup;
 
 import java.io.Serializable;
 
@@ -19,10 +20,10 @@ public class AssetWithParentIdForSaiNa_RO implements Serializable {
             "FROM\n" +
             "\tasset AS a\n" +
             "\tLEFT JOIN relation AS r ON r.to_id = a.id  and  r.delete_flag=0\n" +
-            "\tAND r.from_type = '"+EntityType.ASSET.name() +"' \n" +
+            "\tAND r.from_type = '"+ EntityType.ASSET.name() +"' \n" +
             "\tAND r.to_type = '"+EntityType.ASSET.name()+"' \n" +
-            "\tAND r.relation_type_group = '"+RelationTypeGroup.COMMON.name() +"' \n" +
-            "\tAND r.relation_type = '"+RelationType.Contains.name() +"' \n" +
+            "\tAND r.relation_type_group = '"+ RelationTypeGroup.COMMON.name() +"' \n" +
+            "\tAND r.relation_type = '"+ RelationType.Contains.name() +"' \n" +
             "WHERE\n" +
             "\t 1=1  and a.delete_flag=0 \n";
 

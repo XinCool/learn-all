@@ -1,9 +1,7 @@
 package com.example.ddd.infrastructure.entities.readonly;
 
-import com.sie.iot.platform.asset.model.utils.enums.EntityType;
-import com.sie.iot.platform.asset.model.utils.enums.RelationType;
-import com.sie.iot.platform.asset.model.utils.enums.RelationTypeGroup;
-import com.sie.iot.platform.asset.model.utils.id.UUIDConverter;
+import com.example.ddd.infrastructure.utils.enums.EntityType;
+import com.example.ddd.infrastructure.utils.id.UUIDConverter;
 
 import java.io.Serializable;
 

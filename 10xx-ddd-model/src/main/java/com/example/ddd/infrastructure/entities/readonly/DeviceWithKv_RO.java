@@ -1,7 +1,7 @@
 package com.example.ddd.infrastructure.entities.readonly;
 
-import com.sie.iot.platform.asset.model.entities.AttributeKvEntity_HI;
-import com.sie.iot.platform.asset.model.utils.enums.DeviceType;
+import com.example.ddd.infrastructure.entities.AttributeKvEntity_HI;
+import com.example.ddd.infrastructure.utils.enums.DeviceType;
 
 import java.io.Serializable;
 import java.util.List;
