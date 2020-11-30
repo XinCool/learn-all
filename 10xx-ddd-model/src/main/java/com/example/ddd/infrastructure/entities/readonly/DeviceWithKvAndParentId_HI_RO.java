@@ -1,7 +1,7 @@
 package com.example.ddd.infrastructure.entities.readonly;
 
-import com.example.ddd.infrastructure.utils.enums.EntityType;
 import lombok.Data;
+import org.thingsboard.server.common.data.EntityType;
 
 import java.io.Serializable;
 import java.util.List;
