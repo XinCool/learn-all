@@ -35,9 +35,9 @@ public class DeviceTypeEntity_HI implements Serializable{
 		this.dtid = dtid;
 	}
 
-	@Id
-	@GenericGenerator(name = "idGenerator", strategy = "com.example.ddd.infrastructure.utils.id.CustomUUIDGenerator")
-	@GeneratedValue(generator = "idGenerator")
+	@Id	
+	@GenericGenerator(name = "redisGenerationId", strategy = "com.sie.iot.common.idgenerate.RedisGenerationId")
+	@GeneratedValue(generator = "redisGenerationId")
 	@Column(name="dtid", nullable=false, length=20)	
 	public Long getDtid() {
 		return dtid;

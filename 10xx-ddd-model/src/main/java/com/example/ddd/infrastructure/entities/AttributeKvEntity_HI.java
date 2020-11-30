@@ -10,8 +10,6 @@ import java.util.Date;
 /**
  * AttributeKvEntity_HI Entity Object
  * Fri Mar 27 15:41:06 CST 2020  Auto Generate
- *
- * @author
  */
 @Entity
 @Table(name = "attribute_kv")
@@ -29,8 +27,7 @@ public class AttributeKvEntity_HI implements Serializable {
     private Long operatorUserId;
     private String id;
     private String description;
-    // 删除标识 0表示未删除 1表示删除了
-    private Integer deleteFlag = 0;
+    private Integer deleteFlag = 0; //删除标识 0表示未删除 1表示删除了
 
     @Id
     @Column(name = "id", nullable = false, length = 31)
@@ -223,7 +220,7 @@ public class AttributeKvEntity_HI implements Serializable {
         this.deleteFlag = deleteFlag;
     }
 
-    @Column(name = "delete_flag", nullable = true, length = 11)
+    @Column(name="delete_flag", nullable=true, length=11)
     public Integer getDeleteFlag() {
         return deleteFlag;
     }

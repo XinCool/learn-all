@@ -35,8 +35,8 @@ public class RelationEntity_HI implements Serializable{
 //	@GenericGenerator(name = "idGenerator", strategy = "com.sie.iot.platform.asset.model.utils.id.CustomUUIDGenerator")
 //	@GeneratedValue(generator = "idGenerator")
 	@Id
-	@GenericGenerator(name = "idGenerator", strategy = "com.example.ddd.infrastructure.utils.id.CustomUUIDGenerator")
-	@GeneratedValue(generator = "idGenerator")
+	@GenericGenerator(name = "redisGenerationId", strategy = "com.sie.iot.common.idgenerate.RedisGenerationId")
+	@GeneratedValue(generator = "redisGenerationId")
 	@Column(name="id", nullable=false, length=20)
 	public Long getId() {
 		return id;
