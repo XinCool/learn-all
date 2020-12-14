@@ -1,0 +1,21 @@
+server:
+  port: 9144
+  tomcat:
+    #如下配置是根据4核8G内存单进程服务器配置
+    #等待队列长度,默认100（队列也做缓冲池用，但也不能无限长， 不但消耗内存，而且出队入队也消耗CPU）
+    accept-count: 1000  #最大的等待数
+    #tomcat默认最大线程数为200   具体根据服务器配置调整
+    max-threads: 400
+    #最大连接数
+    max-connections: 10000
+    # 最小工作空闲线程数，默认10。（适当增大一些，以便应对突然增长的访问量）
+    min-spare-threads: 100
+# 可以配置api-url ribbon，对以上的服3务进行负载均衡
+ribbon:
+  okhttp:
+    enabled: true
+
+spring:
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
