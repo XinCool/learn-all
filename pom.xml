@@ -18,6 +18,7 @@
     <modules>
         <module>10xx-ddd-model</module>
         <module>20xx-ddd-application</module>
+        <module>2011-learn-feign-application</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
@@ -145,28 +146,28 @@
             <artifactId>swagger-annotations</artifactId>
             <version>1.5.22</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.sie.irradiator</groupId>-->
-<!--            <artifactId>1011-sieiot-common-model</artifactId>-->
-<!--            <version>2.0.0</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.sie.irradiator</groupId>-->
+        <!--            <artifactId>1011-sieiot-common-model</artifactId>-->
+        <!--            <version>2.0.0</version>-->
+        <!--        </dependency>-->
 
-<!--        <dependency>-->
-<!--            <groupId>com.sie.irradiator</groupId>-->
-<!--            <artifactId>5002-sieiot-eventual-consistency-component</artifactId>-->
-<!--            <version>2.1.2</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.sie.irradiator</groupId>-->
+        <!--            <artifactId>5002-sieiot-eventual-consistency-component</artifactId>-->
+        <!--            <version>2.1.2</version>-->
+        <!--        </dependency>-->
 
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
+        <!--        </dependency>-->
 
         <!--   apollo 作为规则配置源 -->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.csp</groupId>-->
-<!--            <artifactId>sentinel-datasource-apollo</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba.csp</groupId>-->
+        <!--            <artifactId>sentinel-datasource-apollo</artifactId>-->
+        <!--        </dependency>-->
     </dependencies>
 
     <repositories>
