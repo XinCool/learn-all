@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>learn-all</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>ddd-demo-iot</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
     <parent>
@@ -145,28 +145,28 @@
             <artifactId>swagger-annotations</artifactId>
             <version>1.5.22</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.sie.irradiator</groupId>-->
-        <!--            <artifactId>1011-sieiot-common-model</artifactId>-->
-        <!--            <version>2.0.0</version>-->
-        <!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.sie.irradiator</groupId>-->
+<!--            <artifactId>1011-sieiot-common-model</artifactId>-->
+<!--            <version>2.0.0</version>-->
+<!--        </dependency>-->
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.sie.irradiator</groupId>-->
-        <!--            <artifactId>5002-sieiot-eventual-consistency-component</artifactId>-->
-        <!--            <version>2.1.2</version>-->
-        <!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.sie.irradiator</groupId>-->
+<!--            <artifactId>5002-sieiot-eventual-consistency-component</artifactId>-->
+<!--            <version>2.1.2</version>-->
+<!--        </dependency>-->
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
-        <!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
+<!--        </dependency>-->
 
         <!--   apollo 作为规则配置源 -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba.csp</groupId>-->
-        <!--            <artifactId>sentinel-datasource-apollo</artifactId>-->
-        <!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.csp</groupId>-->
+<!--            <artifactId>sentinel-datasource-apollo</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
     <repositories>
