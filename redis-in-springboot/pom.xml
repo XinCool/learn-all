@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.learn</groupId>
-        <artifactId>learn-all-v1.0</artifactId>
-        <version>1.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.3.RELEASE</version>
     </parent>
     <groupId>com.learn</groupId>
     <artifactId>redis-in-springboot</artifactId>
@@ -15,6 +15,8 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <scala.version>2.11</scala.version>
+        <akka.version>2.4.2</akka.version>
     </properties>
 
     <dependencies>
